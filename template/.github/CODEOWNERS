@@ -1,0 +1,8 @@
+# Protected paths: changes need the owner.
+/tests/acceptance/ @{{@owner_login}}
+/docs/contracts/    @{{@owner_login}}
+/.github/           @{{@owner_login}}
+/scripts/           @{{@owner_login}}
+/settings/          @{{@owner_login}}
+/AGENTS.md          @{{@owner_login}}
+/quarantine.yml     @{{@owner_login}}

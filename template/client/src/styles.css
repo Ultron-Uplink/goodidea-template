@@ -1,0 +1,10 @@
+@import "tailwindcss";
+/* Design tokens come from docs/design/DESIGN.md. Replace these placeholders when the design is locked. */
+@theme {
+  --color-ink: #16130f;
+  --color-paper: #faf7f2;
+}
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
