@@ -1,0 +1,4 @@
+# Quarantined tests. Only the owner edits this file (CODEOWNERS).
+# Each entry: test, reason, issue, owner, expires (YYYY-MM-DD, at most 14 days out).
+# CI fails on an expired entry and when more than 3 are open.
+entries: []

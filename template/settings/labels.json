@@ -1,0 +1,18 @@
+[
+  {"name":"agent-created","color":"5319e7","description":"Created by an agent"},
+  {"name":"agent:blocked","color":"b60205","description":"Agent stopped after its retry budget"},
+  {"name":"needs-owner","color":"fbca04","description":"Waiting on the owner (credential, decision, approval)"},
+  {"name":"test-change","color":"d93f0b","description":"Intentionally changes an acceptance test"},
+  {"name":"contract-change","color":"d93f0b","description":"Intentionally changes a contract"},
+  {"name":"state:in-review","color":"0e8a16","description":"PR open and under review"},
+  {"name":"state:merged","color":"1d76db","description":"Merged to main"},
+  {"name":"state:deployed","color":"006b75","description":"Running in an environment"},
+  {"name":"state:verified","color":"0052cc","description":"Checked on the running environment"},
+  {"name":"milestone:m0","color":"c5def5","description":"Walking skeleton"},
+  {"name":"milestone:m1","color":"c5def5","description":"Riskiest slice"},
+  {"name":"area:client","color":"ededed","description":""},
+  {"name":"area:server","color":"ededed","description":""},
+  {"name":"area:data","color":"ededed","description":""},
+  {"name":"area:infra","color":"ededed","description":""},
+  {"name":"area:design","color":"ededed","description":""}
+]
