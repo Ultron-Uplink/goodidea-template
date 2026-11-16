@@ -1,0 +1,112 @@
+# Mistakes we have already paid for, from real projects (details generalised; this repo is public). Owner: the template owner. Each row needs a fixture before its control counts.
+# control status: enforced (a check or setting exists) | planned (text only, not yet counted)
+- id: G1
+  mistake: No CI; gates run only by the author
+  source: project with no CI workflows
+  control: CI in the first commit; verify required in the ruleset
+  status: enforced
+- id: G2
+  mistake: Three verification paths
+  source: standing orders named a check that skipped two packages
+  control: One root verify that fans out; CI runs exactly it
+  status: enforced
+- id: G3
+  mistake: Security defects found after launch
+  source: data endpoints readable without sign-in, found after launch
+  control: Security baseline negative tests from a data-access matrix in M0
+  status: planned
+- id: G4
+  mistake: Deployed code not traceable to the repo
+  source: live service running code not matching the repo
+  control: Build in CI, tag image by SHA, /version endpoint, drift check
+  status: planned
+- id: G5
+  mistake: Config errors masked
+  source: misconfiguration reported as a generic failure
+  control: Env schema validated at build and boot; error taxonomy
+  status: planned
+- id: G6
+  mistake: Documentation sprawl; state kept as files
+  source: 20+ documents, hundreds of KB, state kept in files
+  control: Docs size budget and orphan check; state lives in issues
+  status: enforced
+- id: G7
+  mistake: Dead files left in the tree
+  source: legacy scaffold folders left in the tree
+  control: Top-level allowlist and orphan check
+  status: enforced
+- id: G8
+  mistake: Autonomy mismatch
+  source: written rule said agents never merge; practice auto-merged
+  control: Autonomy ladder, start at L0
+  status: enforced
+- id: G9
+  mistake: Preview deploys assumed
+  source: deploy target was a home server, not a preview platform
+  control: Deploy adapter contract with a mock adapter
+  status: planned
+- id: G10
+  mistake: Scope too big to build at once
+  source: nine PRs to land one capability
+  control: v0 scope and stop-doing list; M0 then M1
+  status: planned
+- id: G11
+  mistake: Privacy, licence and supply-chain gaps
+  source: raw user captures committed to the repo
+  control: Private default, capture redaction, pinned skills and actions
+  status: planned
+- id: G12
+  mistake: Generator inside a repo with gaps
+  source: a generator living in a repo with the gaps above
+  control: Generator is its own package with its own verify and idempotency tests
+  status: planned
+- id: H1
+  mistake: Symptom fixed before cause
+  source: a timeout raised fivefold with no effect on the failure
+  control: Investigation-first rule in AGENTS.md and fix-bug playbook
+  status: enforced
+- id: H2
+  mistake: Merged with a known defect on a red base
+  source: PRs merged with a known defect while the base branch was red
+  control: Required verify, strict status checks, thread resolution, quarantine rules
+  status: enforced
+- id: H3
+  mistake: Unreproducible evidence
+  source: PR evidence cited a script not in the branch
+  control: Evidence must be a CI link or a rerunnable command
+  status: planned
+- id: H4
+  mistake: Duplicate PRs and leftover branches
+  source: several PRs and leftover branches for one issue
+  control: One branch per issue, delete on merge, stale-branch sweep
+  status: planned
+- id: H5
+  mistake: Rebase and retry tickets
+  source: repeated rebase and retry tickets
+  control: Small PRs, strict checks, auto-update branches, merge queue
+  status: planned
+- id: H6
+  mistake: API quota burned; intake dropped work
+  source: API quota exhausted by polling; intake silently dropped work
+  control: Call budgets and an intake canary (harness side)
+  status: planned
+- id: H7
+  mistake: Several copies of truth; apply step
+  source: several working copies disagreed about what was current
+  control: Fresh clones only; promotion workflow (harness side)
+  status: planned
+- id: H8
+  mistake: Reports and probes as files and tickets
+  source: a dozen status and report files at the repo root
+  control: Orphan check; reports go in issues
+  status: enforced
+- id: H9
+  mistake: Documents too large to read
+  source: one 80 KB document too large to read in a pass
+  control: Per-document size cap
+  status: enforced
+- id: H10
+  mistake: Loop not closed mechanically
+  source: issues closed without checking the running system
+  control: Label state machine to state:verified; Closes #N required
+  status: planned

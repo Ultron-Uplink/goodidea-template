@@ -1,0 +1,85 @@
+{
+  "templateVersion": "0.2.0",
+  "sourceDir": "template",
+  "syntax": "{{@name}}",
+  "placeholders": {
+    "project_name": {
+      "type": "string",
+      "description": "Human name, e.g. GoodIdea"
+    },
+    "project_slug": {
+      "type": "slug",
+      "description": "kebab-case, used for packages and images"
+    },
+    "owner": {
+      "type": "string",
+      "description": "GitHub owner (user or org) that owns the repo"
+    },
+    "owner_login": {
+      "type": "string",
+      "description": "GitHub login of the human who approves protected-path changes"
+    },
+    "agent_login": {
+      "type": "string",
+      "description": "GitHub login the harness acts as",
+      "default": ""
+    },
+    "mission": {
+      "type": "string",
+      "description": "One sentence: who it is for and what it does"
+    },
+    "template_version": {
+      "type": "string",
+      "description": "Filled by the renderer",
+      "default": "auto"
+    }
+  },
+  "kinds": {
+    "static": [
+      "scripts/**",
+      ".github/workflows/**",
+      ".github/dependabot.yml",
+      ".github/ISSUE_TEMPLATE/**",
+      ".github/PULL_REQUEST_TEMPLATE.md",
+      "settings/**",
+      ".agents/playbooks/**",
+      "quarantine.yml",
+      ".gitignore",
+      "pnpm-workspace.yaml",
+      "biome.json",
+      "tsconfig.base.json"
+    ],
+    "rendered": [
+      "AGENTS.md",
+      "CLAUDE.md",
+      "README.md",
+      "STATUS.md",
+      ".github/CODEOWNERS",
+      "package.json",
+      ".template-version",
+      "tsconfig.base.json",
+      "client/index.html",
+      "client/package.json",
+      "server/package.json",
+      "packages/shared/package.json",
+      "server/src/app.ts",
+      "server/test/app.test.ts",
+      "client/src/strings.ts"
+    ],
+    "modelGenerated": [
+      "docs/product/**",
+      "docs/design/DESIGN.md",
+      "docs/contracts/**",
+      "tests/acceptance/**",
+      "client/src/strings.ts"
+    ],
+    "preset": [
+      "client/**",
+      "server/**",
+      "packages/**"
+    ],
+    "generatedAfterRender": [
+      "pnpm-lock.yaml (generator runs pnpm install and commits it)"
+    ]
+  }
+}
