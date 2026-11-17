@@ -1,5 +1,11 @@
 # Mistakes we have already paid for, from real projects (details generalised; this repo is public). Owner: the template owner. Each row needs a fixture before its control counts.
 # control status: enforced (a check or setting exists) | planned (text only, not yet counted)
+- id: G13
+  mistake: Private Free-plan repo reported protected when GitHub could not apply its ruleset
+  source: GitHub rulesets require an eligible plan for private repos
+  control: Explicit plan-limit skip in sync receipt and STATUS; other API errors stay fatal
+  fixture: ruleset-plan-limit.fixture.mjs
+  status: enforced
 - id: G1
   mistake: No CI; gates run only by the author
   source: project with no CI workflows
