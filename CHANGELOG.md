@@ -2,6 +2,9 @@
 
 ## 0.2.1
 - Keep Biome pinned exactly to 2.6.8, migrate its schema and recommended preset, and guard against version/configuration drift with a fixture.
+- Clarify private-by-default, owner-merge standing orders and first-day agent onboarding.
+- Record private-repo plan-limit ruleset skips in the sync receipt and STATUS, with a regression fixture and ledger entry.
+- Keep the rendered template version aligned with the release metadata.
 
 ## 0.2.0
 - Working walking-skeleton preset: TypeScript pnpm workspace with a Hono server (/health, /version, env schema, error taxonomy), React + Vite + Tailwind client, shared zod schemas, Biome, Vitest. Full verify passes on a rendered project.
