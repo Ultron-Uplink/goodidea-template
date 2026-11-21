@@ -2,6 +2,9 @@ name: Task
 description: One small, buildable unit of work (one PR).
 labels: ["agent-created"]
 body:
+  - type: markdown
+    attributes:
+      value: "Read AGENTS.md. One issue, one small PR; branch ends with the ticket short name. Run pnpm verify before opening the PR, include Closes #N, and leave merging to the owner (L0)."
   - type: input
     id: fr
     attributes: { label: FR-IDs, description: "e.g. FR-3, FR-4" }

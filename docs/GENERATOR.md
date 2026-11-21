@@ -9,10 +9,16 @@ How GoodIdea's "Create repo" button uses this template. The executable version o
 4. Run `node scripts/validate-generated.mjs <dir>`. If it fails, send the error list back to the model once; if it fails again, stop and show the owner.
 5. Render: `node scripts/render.mjs --values values.json --out <dir>`, then run `pnpm install` in the output so `pnpm-lock.yaml` exists, then `pnpm verify`. Do not continue if verify fails.
 6. Preview for the owner: file tree, requirement-to-issue coverage, design style tiles. Wait for approval.
-7. Create the repo (private by default), push the rendered files, run `scripts/apply-settings.mjs`, then create the issues from `issues.json`.
+7. Create the repo (private by default), push the rendered files, sync settings with the command below, then create the issues from `issues.json`. Commit the updated `STATUS.md`; keep the receipt with the generator's sync records (outside the generated project).
 8. Wait for CI on the new repo to pass before marking it ready. Record the template version used (`.template-version`).
 
 Every step must be safe to run again after a failure halfway.
+
+```bash
+node scripts/apply-settings.mjs owner/repo --settings-dir /generated/settings --receipt /sync/receipt.json --status /generated/STATUS.md
+```
+
+The receipt records `settings`, label counts and `ruleset` (`created`, `updated`, or `skipped: plan limit`). The same receipt is printed as the final JSON line. Pass both output paths for generator syncs; their parent directories must exist. `--status` updates only the `Branch protection:` line, preserving the handoff. A private repo's explicit GitHub plan-limit response (403 with an upgrade-or-public message) skips ruleset application, records `skipped: plan limit`, and states plainly in STATUS that protection is unavailable and the owner must check CI/review manually. Other permission/API failures remain fatal, not skips. A later successful sync replaces the warning. `--dry-run` writes neither output and never claims protection was applied.
 
 ## prd.json
 ```json
