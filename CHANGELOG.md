@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.1
+- Keep Biome pinned exactly to 2.6.8, migrate its schema and recommended preset, and guard against version/configuration drift with a fixture.
+
 ## 0.2.0
 - Working walking-skeleton preset: TypeScript pnpm workspace with a Hono server (/health, /version, env schema, error taxonomy), React + Vite + Tailwind client, shared zod schemas, Biome, Vitest. Full verify passes on a rendered project.
 - Generator contract (docs/GENERATOR.md) and executable validator.
